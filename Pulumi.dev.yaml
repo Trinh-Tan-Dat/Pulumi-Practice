@@ -1,0 +1,18 @@
+config:
+  aws:region: us-east-1
+
+resources:
+  vpcModule:
+    type: "file://~/DevOps/Pulumi/vpc/vpc.yaml"
+  subnetModule:
+    type: "file://~/DevOps/Pulumi/subnets/subnets.yaml"
+  igwModule:
+    type: "file://~/DevOps/Pulumi/igw/igw.yaml"
+  routeTablesModule:
+    type: "file://~/DevOps/Pulumi/route_tables/route_tables.yaml"
+  natGatewayModule:
+    type: "file://~/DevOps/Pulumi/nat_gateway/nat_gateway.yaml"
+  ec2Module:
+    type: "file://~/DevOps/Pulumi/ec2/ec2.yaml"
+  securityGroupsModule:
+    type: "file://~/DevOps/Pulumi/security_groups/security_groups.yaml"

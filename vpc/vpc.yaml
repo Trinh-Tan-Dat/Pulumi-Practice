@@ -1,0 +1,9 @@
+resources:
+  myVpc:
+    type: aws:ec2/vpc:Vpc
+    properties:
+      cidrBlock: "10.0.0.0/16"
+      enableDnsHostnames: true
+      enableDnsSupport: true
+      tags:
+        Name: my-vpc

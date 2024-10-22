@@ -1,0 +1,7 @@
+resources:
+  internetGateway:
+    type: aws:ec2/internetGateway:InternetGateway
+    properties:
+      vpcId: ${myVpc.id}
+      tags:
+        Name: my-igw

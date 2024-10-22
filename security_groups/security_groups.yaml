@@ -1,0 +1,25 @@
+resources:
+  publicSecurityGroup:
+    type: aws:ec2/securityGroup:SecurityGroup
+    properties:
+      vpcId: !Ref myVpc
+      ingress:
+        - protocol: "tcp"
+          fromPort: 22
+          toPort: 22
+          cidrBlocks: ["0.0.0.0/32"]  
+      tags:
+        Name: public-security-group
+
+  privateSecurityGroup:
+    type: aws:ec2/securityGroup:SecurityGroup
+    properties:
+      vpcId: !Ref myVpc
+      ingress:
+        - protocol: "tcp"
+          fromPort: 22
+          toPort: 22
+          securityGroups: 
+            - !Ref publicSecurityGroup  
+      tags:
+        Name: private-security-group
